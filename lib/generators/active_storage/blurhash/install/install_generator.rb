@@ -15,7 +15,13 @@ class ActiveStorage::Blurhash::InstallGenerator < Rails::Generators::Base
     directory "javascript", "app/javascript/blurhash"
   end
 
+  def pin_blurhash_javascript
+    if File.exist? Rails.root.join("config", "importmap.rb")
+      append_to_file "config/importmap.rb", 'pin "active_storage_blurhash", to: "blurhash/index.js"' + "\n"
+    end
+  end
+
   def append_to_main_javascript_entrypoint
-    append_to_file "app/javascript/application.js", "import \"./blurhash\";\n"
+    append_to_file "app/javascript/application.js", "import \"active_storage_blurhash\";\n"
   end
 end
