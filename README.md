@@ -75,6 +75,10 @@ Note that for each blob an `AnalyzeJob` will be appended to your job processor q
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
+## Tutorial
+
+We wrote a [tutorial](https://avohq.io/blog/blurhash-active-storage) on how to add it to a Rails app.
+
 ## Other gems & packages
 
 - [`avo`](https://github.com/avo-hq/avo) - Build Content management systems with Ruby on Rails
