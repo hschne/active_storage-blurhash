@@ -17,7 +17,7 @@ module ActiveStorage
           when 3
             @thumbnail
           else
-            @thumnail.extract_band(0, n: 3)
+            @thumbnail.extract_band(0, n: 3)
           end
         end
 
