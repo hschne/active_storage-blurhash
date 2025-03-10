@@ -6,7 +6,7 @@ module ActiveStorage
 
         def initialize(image)
           @thumbnail = MiniMagick::Image.open(
-            ::ImageProcessing::MiniMagick.source(image.path).resize_to_limit(200, 200).call.path
+            ::ImageProcessing::MiniMagick.source(image.path).resize_to_limit(200, 200).loader(page: 0).call.path
           )
         end
 
