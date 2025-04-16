@@ -17,10 +17,11 @@ module BlurhashImageHelper
       # size = source.variation.transformations[:resize]
     end
 
-    blurhash = blob.metadata["blurhash"]
-    size ||= "#{blob.metadata["width"]}x#{blob.metadata["height"]}"
+    blurhash = blob&.metadata["blurhash"]
 
     if !!blurhash
+      size ||= "#{blob.metadata["width"]}x#{blob.metadata["height"]}"
+
       options[:loading] = "lazy"
       options[:size] = size
 
