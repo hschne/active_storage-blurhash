@@ -17,7 +17,7 @@ module BlurhashImageHelper
       # size = source.variation.transformations[:resize]
     end
 
-    blurhash = blob&.metadata["blurhash"]
+    blurhash = blob&.metadata&.fetch("blurhash", nil)
 
     if !!blurhash
       size ||= "#{blob.metadata["width"]}x#{blob.metadata["height"]}"

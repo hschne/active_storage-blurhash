@@ -22,7 +22,7 @@ module ActiveStorage
         end
 
         def pixels
-          @thumbnail.to_a.flatten
+          @thumbnail&.to_a&.flatten || []
         end
       end
     end
