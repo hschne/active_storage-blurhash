@@ -27,7 +27,8 @@ module BlurhashImageHelper
 
       wrapper_class = options.delete(:wrapper_class)
       canvas_class = options.delete(:canvas_class)
-      tag.div class: wrapper_class, data: {blurhash: blurhash}, style: "position: relative" do
+      wrapper_style = options.delete(:wrapper_style)
+      tag.div class: wrapper_class, data: {blurhash: blurhash}, style: "position: relative;#{wrapper_style}" do
         image_tag(source, options) + tag.canvas(style: "position: absolute; inset: 0; transition-property: opacity; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms;", class: canvas_class)
       end
     else
